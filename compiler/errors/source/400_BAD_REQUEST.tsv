@@ -354,3 +354,8 @@ WEBPAGE_CURL_FAILED	Telegram server could not fetch the provided URL
 WEBPAGE_MEDIA_EMPTY	The URL doesn't contain any valid media
 YOU_BLOCKED_USER	You blocked this user
 ENTITY_BOUNDS_INVALID	The message entity bounds are invalid
+CHAT_DISCUSSION_UNALLOWED	Chat discussion is not allowed
+EXPIRE_DATE_INVALID	The expire date is invalid
+PARTICIPANT_ID_INVALID	The participant id is invalid
+SEND_AS_PEER_INVALID	The send as peer is invalid
+TOPIC_DELETED	The topic has been deleted

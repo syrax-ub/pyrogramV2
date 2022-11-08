@@ -11,3 +11,6 @@ STICKERSET_INVALID	The sticker set is invalid
 STICKERSET_OWNER_ANONYMOUS	This sticker set can't be used as the group's sticker set because it was created by one of its anonymous admins
 USERPIC_UPLOAD_REQUIRED	You must have a profile picture to publish your geolocation
 USER_RESTRICTED	You are limited/restricted. You can't perform this action
+UPDATE_APP_TO_LOGIN	You must update your Telegram app to log in
+SEND_CODE_UNAVAILABLE	The phone number is not available for authorization
+PREMIUM_CURRENTLY_UNAVAILABLE	The premium account is currently unavailable
