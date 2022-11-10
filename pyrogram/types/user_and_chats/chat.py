@@ -67,6 +67,9 @@ class Chat(Object):
         last_name (``str``, *optional*):
             Last name of the other party in a private chat, for private chats.
 
+        is_forum (``bool``, *optional*):
+            True, if the supergroup chat is a forum
+
         photo (:obj:`~pyrogram.types.ChatPhoto`, *optional*):
             Chat photo. Suitable for downloads only.
 
@@ -147,6 +150,7 @@ class Chat(Object):
         username: str = None,
         first_name: str = None,
         last_name: str = None,
+        is_forum: bool = None,
         photo: "types.ChatPhoto" = None,
         bio: str = None,
         description: str = None,
@@ -178,6 +182,7 @@ class Chat(Object):
         self.username = username
         self.first_name = first_name
         self.last_name = last_name
+        self.is_forum = is_forum
         self.photo = photo
         self.bio = bio
         self.description = description
@@ -230,6 +235,7 @@ class Chat(Object):
             members_count=getattr(chat, "participants_count", None),
             dc_id=getattr(getattr(chat, "photo", None), "dc_id", None),
             has_protected_content=getattr(chat, "noforwards", None),
+            is_forum=getattr(chat, "forum", False),
             client=client
         )
 
