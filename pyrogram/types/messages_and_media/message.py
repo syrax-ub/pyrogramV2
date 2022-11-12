@@ -549,6 +549,14 @@ class Message(Object, Update):
             elif isinstance(action, raw.types.MessageActionTopicCreate):
                 forum_topic_created = types.ForumTopicCreated._parse(action)
                 service_type = enums.MessageServiceType.FORUM_TOPIC_CREATED
+            elif isinstance(action, raw.types.MessageActionTopicEdit):
+                forum_topic_edit = types.ForumTopicEdit._parse(action)
+                if action.title:
+                    service_type = enums.MessageServiceType.FORUM_TOPIC_EDITED
+                elif action.closed:
+                    service_type = enums.MessageServiceType.FORUM_TOPIC_CLOSED
+                else:
+                    service_type = enums.MessageServiceType.FORUM_TOPIC_REOPENED
             elif isinstance(action, raw.types.MessageActionGroupCallScheduled):
                 video_chat_scheduled = types.VideoChatScheduled._parse(action)
                 service_type = enums.MessageServiceType.VIDEO_CHAT_SCHEDULED

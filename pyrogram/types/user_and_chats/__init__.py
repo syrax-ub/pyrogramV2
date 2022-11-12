@@ -36,6 +36,7 @@ from .invite_link_importer import InviteLinkImporter
 from .restriction import Restriction
 from .user import User
 from .forum_topic_created import ForumTopicCreated
+from .forum_topic_edit import ForumTopicEdit
 from .video_chat_ended import VideoChatEnded
 from .video_chat_members_invited import VideoChatMembersInvited
 from .video_chat_scheduled import VideoChatScheduled
@@ -56,6 +57,7 @@ __all__ = [
     "InviteLinkImporter",
     "ChatAdminWithInviteLinks",
     "ForumTopicCreated",
+    "ForumTopicEdit",
     "VideoChatStarted",
     "VideoChatEnded",
     "VideoChatMembersInvited",

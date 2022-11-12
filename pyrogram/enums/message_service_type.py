@@ -60,6 +60,15 @@ class MessageServiceType(AutoName):
     FORUM_TOPIC_CREATED = auto()
     "a new forum topic created in the chat"
 
+    FORUM_TOPIC_EDITED = auto()
+    "a forum topic title/icon renamed/changed in the chat"
+
+    FORUM_TOPIC_CLOSED = auto()
+    "a forum topic closed in the chat"
+
+    FORUM_TOPIC_REOPENED = auto()
+    "a closed forum topic reopened in the chat"
+
     VIDEO_CHAT_STARTED = auto()
     "Video chat started"
 

@@ -235,7 +235,7 @@ class Chat(Object):
             members_count=getattr(chat, "participants_count", None),
             dc_id=getattr(getattr(chat, "photo", None), "dc_id", None),
             has_protected_content=getattr(chat, "noforwards", None),
-            is_forum=getattr(chat, "forum", False),
+            is_forum=getattr(chat, "forum", None),
             client=client
         )
 
@@ -261,6 +261,7 @@ class Chat(Object):
             members_count=getattr(channel, "participants_count", None),
             dc_id=getattr(getattr(channel, "photo", None), "dc_id", None),
             has_protected_content=getattr(channel, "noforwards", None),
+            is_forum=getattr(channel, "forum", None),
             client=client
         )
 
