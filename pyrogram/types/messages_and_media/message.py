@@ -881,17 +881,18 @@ class Message(Object, Update):
             )
 
             if message.reply_to:
-                parsed_message.reply_to_message_id = message.reply_to.reply_to_msg_id
-                parsed_message.reply_to_top_message_id = message.reply_to.reply_to_top_id
-
                 if message.reply_to.forum_topic:
                     if message.reply_to.reply_to_top_id:
                         parsed_message.message_thread_id = message.reply_to.reply_to_top_id
+                        parsed_message.reply_to_message_id = message.reply_to.reply_to_msg_id
                     else:
                         parsed_message.message_thread_id = message.reply_to.reply_to_msg_id
                     parsed_message.is_topic_message = True
+                else:
+                    parsed_message.reply_to_message_id = message.reply_to.reply_to_msg_id
+                    parsed_message.reply_to_top_message_id = message.reply_to.reply_to_top_id
 
-                if replies:
+                if replies and parsed_message.reply_to_message_id:
                     try:
                         key = (parsed_message.chat.id, parsed_message.reply_to_message_id)
                         reply_to_message = client.message_cache[key]
