@@ -974,6 +974,7 @@ class Message(Object, Update):
         disable_web_page_preview: bool = None,
         disable_notification: bool = None,
         reply_to_message_id: int = None,
+        message_thread_id: int = None,
         schedule_date: datetime = None,
         protect_content: bool = None,
         reply_markup=None
@@ -1023,6 +1024,10 @@ class Message(Object, Update):
             reply_to_message_id (``int``, *optional*):
                 If the message is a reply, ID of the original message.
 
+            message_thread_id (``int``, *optional*):
+                Unique identifier of a message thread to which the message belongs.
+                for supergroups only
+
             schedule_date (:py:obj:`~datetime.datetime`, *optional*):
                 Date when the message will be automatically sent.
 
@@ -1053,6 +1058,7 @@ class Message(Object, Update):
             disable_web_page_preview=disable_web_page_preview,
             disable_notification=disable_notification,
             reply_to_message_id=reply_to_message_id,
+            message_thread_id=message_thread_id
             schedule_date=schedule_date,
             protect_content=protect_content,
             reply_markup=reply_markup
